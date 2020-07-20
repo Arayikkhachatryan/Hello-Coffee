@@ -13,7 +13,7 @@ import java.util.Scanner;
 
             boolean b1 = true;
             do {
-                System.out.print("Write action (buy, fill, take, exit)");
+                System.out.print("Write action (buy, fill, take, remaining, exit)");
                 String str = scanner.next();
 
                 switch (str) {
@@ -30,6 +30,7 @@ import java.util.Scanner;
                                     water = water - 250;
                                     coffee = coffee - 16;
                                     cups = cups - 1;
+                                    money = money + 7;
                                     System.out.println("We have started making your coffee, please wait :)");
                                     break;
                                 } else if (water < 250) {
@@ -48,6 +49,7 @@ import java.util.Scanner;
                                     milk = milk - 105;
                                     coffee = coffee - 20;
                                     cups = cups - 1;
+                                    money = money + 5;
                                     System.out.println("We have started making your coffee, please wait ;)");
                                     break;
                                 } else if (water < 300) {
@@ -67,6 +69,7 @@ import java.util.Scanner;
                                     milk = milk - 110;
                                     coffee = coffee - 25;
                                     cups = cups - 1;
+                                    money = money + 9;
                                     System.out.println("We have started making your coffee, please wait :)");
                                     break;
                                 } else if (water < 200) {
@@ -101,7 +104,16 @@ import java.util.Scanner;
                         System.out.println(" ");
                         System.out.println("I gave you $" + money + "");
                         money = 0;
+                        break;
 
+                    case "remaining":
+                        System.out.println(" ");
+                        System.out.println("The coffee machine has:");
+                        System.out.println(water + " " + "of water");
+                        System.out.println(milk + " " + "of milk");
+                        System.out.println(coffee + " " + "coffee beans");
+                        System.out.println(cups + " " + "of disposable cups");
+                        System.out.println("$" + money + " " + "of money");
                         break;
 
                     case "exit":
